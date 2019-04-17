@@ -169,7 +169,10 @@
                             duration: 4000,
                             easing: 'swing',
                             step: function (curValue) {
-                                $this.text(Math.ceil(curValue));
+                                let out = Math.ceil(curValue);
+                                console.log($this[0].classList);
+                                if($this[0].classList.contains('plus-s')) out = `${Math.ceil(curValue)}+`;
+                                $this.text(out);
                             }
                         });
                     });
